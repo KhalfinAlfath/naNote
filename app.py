@@ -95,7 +95,36 @@ with st.form("form_praktikum"):
         )
     )
 
-    st.form_submit_button("💾 Simpan Data")
+   simpan = st.form_submit_button("💾 Simpan Data")
+
+if simpan:
+    st.success("✅ Data praktikum berhasil dicatat.")
+
+    st.subheader("🧠 Interpretasi Data Praktikum")
+
+    # Interpretasi ukuran partikel
+    if ukuran < 200:
+        st.write("• **Ukuran Partikel:** Berada pada skala nano (< 200 nm), menunjukkan sistem berpotensi stabil.")
+    else:
+        st.write("• **Ukuran Partikel:** Relatif besar (> 200 nm), berpotensi menurunkan stabilitas sistem nano.")
+
+    # Interpretasi PDI
+    if pdi < 0.3:
+        st.write("• **PDI:** Nilai rendah (< 0,3), menunjukkan distribusi ukuran partikel yang homogen.")
+    else:
+        st.write("• **PDI:** Nilai tinggi (> 0,3), menandakan distribusi partikel kurang homogen.")
+
+    # Interpretasi pH
+    if ph < 4 or ph > 9:
+        st.write("• **pH Sistem:** pH ekstrem dapat memengaruhi muatan permukaan dan kestabilan sistem.")
+    else:
+        st.write("• **pH Sistem:** Berada pada rentang moderat, relatif aman terhadap kestabilan sistem.")
+
+    st.info(
+        "🔬 **Kesimpulan Umum:** Berdasarkan parameter utama yang diamati, sistem nano menunjukkan "
+        "kondisi yang perlu dievaluasi lebih lanjut melalui pengujian stabilitas lanjutan."
+    )
+
 
 # =====================
 # INSIGHT ILMIAH
