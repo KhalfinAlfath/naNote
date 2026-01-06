@@ -95,8 +95,11 @@ with st.form("form_praktikum"):
         )
     )
 
-   simpan = st.form_submit_button("💾 Simpan Data")
+    simpan = st.form_submit_button("💾 Simpan Data")
 
+# =====================
+# INTERPRETASI DATA
+# =====================
 if simpan:
     st.success("✅ Data praktikum berhasil dicatat.")
 
@@ -106,7 +109,7 @@ if simpan:
     if ukuran < 200:
         st.write("• **Ukuran Partikel:** Berada pada skala nano (< 200 nm), menunjukkan sistem berpotensi stabil.")
     else:
-        st.write("• **Ukuran Partikel:** Relatif besar (> 200 nm), berpotensi menurunkan stabilitas sistem nano.")
+        st.write("• **Ukuran Partikel:** Relatif besar (> 200 nm), berpotensi menurunkan kestabilan sistem.")
 
     # Interpretasi PDI
     if pdi < 0.3:
@@ -116,18 +119,19 @@ if simpan:
 
     # Interpretasi pH
     if ph < 4 or ph > 9:
-        st.write("• **pH Sistem:** pH ekstrem dapat memengaruhi muatan permukaan dan kestabilan sistem.")
+        st.write("• **pH Sistem:** pH ekstrem dapat memengaruhi muatan permukaan dan kestabilan sistem nano.")
     else:
-        st.write("• **pH Sistem:** Berada pada rentang moderat, relatif aman terhadap kestabilan sistem.")
+        st.write("• **pH Sistem:** pH berada pada rentang moderat dan relatif aman terhadap kestabilan sistem.")
 
+    # Kesimpulan umum
     st.info(
-        "🔬 **Kesimpulan Umum:** Berdasarkan parameter utama yang diamati, sistem nano menunjukkan "
-        "kondisi yang perlu dievaluasi lebih lanjut melalui pengujian stabilitas lanjutan."
+        "🔬 **Kesimpulan Umum:** Berdasarkan parameter utama yang diamati "
+        "(ukuran partikel, PDI, dan pH), sistem nano menunjukkan kondisi awal "
+        "yang dapat digunakan sebagai dasar evaluasi dan optimasi lanjutan."
     )
 
-
 # =====================
-# INSIGHT ILMIAH
+# INSIGHT ILMIAH UMUM
 # =====================
 st.subheader("🔍 Insight Singkat Nanoteknologi")
 
@@ -153,7 +157,7 @@ with c3:
     st.markdown("""
     <div class="card">
     <b>pH Sistem</b><br>
-    Perubahan pH dapat memengaruhi muatan permukaan dan kestabilan sistem nano.
+    pH memengaruhi muatan permukaan partikel dan stabilitas sistem nano.
     </div>
     """, unsafe_allow_html=True)
 
